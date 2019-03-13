@@ -15,7 +15,7 @@ file_path = [train_file_path, test_file_path]
 train_image_path = cfg.DIR + 'dataset/VRD/sg_dataset/sg_train_images/'
 test_image_path = cfg.DIR + 'dataset/VRD/sg_dataset/sg_test_images/'
 image_path = [train_image_path, test_image_path]
-save_path =cfg.DIR + 'vtranse/input/vrd_roidb.npz'
+save_path =cfg.DIR + 'input/vrd_roidb.npz'
 
 for r in range(2):
 	file_path_use = file_path[r]
@@ -24,7 +24,7 @@ for r in range(2):
 	roidb = []
 	with open(file_path_use,'r') as f:
 		data=json.load(f)
-		image_name = data.keys()
+		image_name = list(data.keys())
 		len_img = len(image_name)
 		t = 0
 		for image_id in range(len_img):
